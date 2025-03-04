@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "VDS Form Fill",
+  "description": "Automatically fills the mDL form fields on scanning the mDL using Tap2iD Verifier",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "alarms"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "images/credenceid-logo-sm.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
